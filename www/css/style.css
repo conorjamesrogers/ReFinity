@@ -1,6 +1,12 @@
+/* Colors
+light text: #ede0e0
+dark text:
+brown: #4e390f
+*/
+
 /*********** General *****************/
 body {
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'Poppins', sans-serif;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/background.jpg);
     background-size: cover;
@@ -15,6 +21,7 @@ h1 {
     font-size: 200%;
     text-align: center;
     font-weight: 700;
+    margin: 10px 0;
 }
 
 
@@ -25,12 +32,21 @@ h1 {
     padding: 5%;
 }
 
+.logo img {
+    width: 15%;
+    height: auto;
+}
+
 
 /************** New Account Section ***********/
 .form {
-    width: 370px;
+    width: 330px;
     margin: auto;
     height: auto;
+}
+
+.form p {
+    text-align: center;
 }
 
 label {
@@ -39,9 +55,10 @@ label {
 }
 
 input[type=text],
-input[type=email] {
+input[type=email],
+input[type=password] {
     float: right;
-    font-size: 18px;
+    font-size: 14px;
     margin: 10px 0;
     border-radius: 20px;
     padding: 5px;
@@ -53,19 +70,26 @@ input[type=email] {
     margin: 20px 0;
 }
 
-input[type=submit] {
+input[type=submit],
+button {
     padding: 10px;
-    font-size: 18px;
+    font-size: 14px;
     border-radius: 20px;
     background-color: #4e390f;
     color: #ede0e0;
+    width: 200px;
 }
 
 input[type=submit]:hover,
-input[type=submit]:active {
+input[type=submit]:active,
+button:hover,
+button:active {
     cursor: pointer;
     background-color: #402d08;
     color: #ede0e0;
     border-color: #402d08;
 }
 
+.hide {
+    display: none;
+}
