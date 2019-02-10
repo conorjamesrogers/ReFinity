@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "955524219940",
+    "firebase_url": "https://refinity-75d88.firebaseio.com",
+    "project_id": "refinity-75d88",
+    "storage_bucket": "refinity-75d88.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955524219940:android:5cf150be3078035a",
+        "android_client_info": {
+          "package_name": "io.hackdavis.refinity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "955524219940-k1fsa1bi0s4v4f4lm045c91ls1fk71si.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAReYJWGSaJOfOi5n8iZqC_ltB8Slhr5uM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
