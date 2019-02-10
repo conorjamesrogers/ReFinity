@@ -28,7 +28,8 @@ function login() {
     $('#email-log').val(),
     $('#password-log').val()).then(
       () => {
-        console.log("Sucess.");
+
+        alert("Sucess.");
 
       }
     ).catch(function(error) {
@@ -52,6 +53,20 @@ function login() {
 
 }
 
+function updateName(name, email, password) {
+  var user = firebase.auth().currentUser;
+  user.updateProfile({
+    accountName: name,
+  }).then(function() {
+    alert(`Add a new user called ${name}.`);
+  }).catch(function(error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    alert(errorMessage);
+    console.log(error);
+  });
+}
+
 // open form to create new account
 $(document).ready(function() {
   $('.create').click(function () {
@@ -64,12 +79,30 @@ $(document).ready(function() {
   $('#login-btn').click(login);
 
   $('.create-btn').click(function () {
-    if (!validatePassword()) {
+
+    var name = $('#name').val();
+    var email = $('#email-sign').val();
+    var password= $('#password').val();
+    var repassword = $('#rep-password').val();
+    if (password != repassword) {
       return;
     }
     firebase.auth().createUserWithEmailAndPassword(
-      $('#email-sign').val(),
-      $('#password').val()).catch(function(error) {
+      email, password).then(function () {
+        var user = firebase.auth().currentUser;
+
+        user.updateProfile({
+          accountName: name,
+        }).then(function() {
+          var newUser = firebase.auth().currentUser;
+          alert(`Add a new user called ${newUSer.accountName}.`);
+        }).catch(function(error) {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          alert(errorMessage);
+          console.log(error);
+        });
+      }).catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
 
