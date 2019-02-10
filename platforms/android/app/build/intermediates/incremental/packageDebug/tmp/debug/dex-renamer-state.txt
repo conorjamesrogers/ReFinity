@@ -1,0 +1,4 @@
+#Sun Feb 10 09:58:31 PST 2019
+base.0=/home/cojaroge/Projects/ugh/ReFinity/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
