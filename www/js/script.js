@@ -95,7 +95,7 @@ $(document).ready(function() {
           accountName: name,
         }).then(function() {
           var newUser = firebase.auth().currentUser;
-          alert(`Add a new user called ${newUSer.accountName}.`);
+          alert(`Add a new user called ${newUser.accountName}.`);
         }).catch(function(error) {
           var errorCode = error.code;
           var errorMessage = error.message;
