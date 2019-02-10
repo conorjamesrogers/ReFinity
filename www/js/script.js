@@ -23,6 +23,34 @@ function validatePassword(){
 password.onchange = validatePassword;
 rep_password.onkeyup = validatePassword;
 
+function login() {
+  firebase.auth().signInWithEmailAndPassword(
+    $('#email-log').val(),
+    $('#password-log').val()).then(
+      () => {
+        console.log("Sucess.");
+
+      }
+    ).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      if (errorCode == 'auth/wrong-password') {
+          alert('Wrong Password.');
+      }
+      else if (errorCode == 'auth/invalid-email') {
+        alert('The email address is invalid.');
+      }
+      else if (errorCode == 'auth/user-not-found') {
+        alert('The email address has not yet checked, try signing up?');
+      }
+      else {
+        alert(errorMessage);
+      }
+
+      console.log(error);
+    });
+
+}
 
 // open form to create new account
 $(document).ready(function() {
@@ -32,6 +60,8 @@ $(document).ready(function() {
     $('.create-acc').removeClass('hide');
     $('.create').addClass('hide');
   });
+
+  $('#login-btn').click(login);
 
   $('.create-btn').click(function () {
     if (!validatePassword()) {
