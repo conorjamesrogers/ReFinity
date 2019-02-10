@@ -19,19 +19,42 @@
     
     <header>
         <div class="logo">
-            <img src="#">
+            <img src="images/logo.png">
         </div>
     </header>
     
     <section class="new-account">
-        <h1>Create Your Account</h1>
         <div class="form">
-            <form>
+            <form class="log-in">
+                <h1>Please Log In</h1>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email-log" placeholder="Your email" required>
+                <br>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password-log" placeholder="Your password" required>
+                <br>
+                <div class="submit-btn">
+                    <input type="submit" value="Log IN">
+                </div>
+                <p>Don't have an account?</p>
+            </form>
+            <div class="submit-btn">
+                <button class="create">Create Account</button>
+            </div>
+            
+            <form class="create-acc hide">
+                <h1>Create Your Account</h1>
                 <label for="name">Full Name</label>
                 <input type="text" name="name" id="name" placeholder="Your full name" required>
                 <br>
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Your email" required>
+                <input type="email" name="email" id="email-sign" placeholder="Your email" required>
+                <br>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Create password" required>
+                <br>
+                <label for="password">Password</label>
+                <input type="password" name="rep-password" id="rep-password" minlength="8" placeholder="Confirm password" required>
                 <br>
                 <div class="submit-btn">
                     <input type="submit" value="Create Account">
@@ -43,4 +66,8 @@
     <footer>
     
     </footer>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    
 </html>
