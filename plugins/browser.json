@@ -1,15 +1,24 @@
 {
-  "prepare_queue": {
-    "installed": [],
-    "uninstalled": []
-  },
-  "config_munge": {
-    "files": {}
-  },
-  "installed_plugins": {
-    "cordova-plugin-firebase": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    }
-  },
-  "dependent_plugins": {}
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "io.hackdavis.refinity"
+        },
+        "cordova-plugin-qrscanner": {
+            "PACKAGE_NAME": "io.hackdavis.refinity"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "io.hackdavis.refinity"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.hackdavis.refinity"
+        }
+    },
+    "dependent_plugins": {}
 }
