@@ -28,22 +28,60 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
+        <meta http-equiv="Content-Security-Policy" content="
+                default-src 'self' data: gap:
+                    https://*.google.com
+                    https://*.googleapis.com
+                    https://*.firebaseio.com
+                    https://*.gstatic.com
+                    https://*.googleusercontent.com
+										http://i.imgur.com/VnDEIQt.png
+										https://*.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/
+                'unsafe-eval';
+                connect-src 'self'
+                   wss://*.firebaseio.com
+									 https://*.googleapis.com
+                'unsafe-eval';
+                style-src 'self'
+                    https://cdnjs.cloudflare.com/
+                    https://*.googleapis.com/
+                    https://*.fontawesome.com/
+                    'unsafe-inline';
+                font-src 'self'
+                    https://cdnjs.cloudflare.com/
+                    https://*.fontawesome.com/
+                    https://*.gstatic.com/ data:;
+                media-src *;
+                script-src 'self'
+                    https://www.gstatic.com/firebasejs/3.9.0/firebase.js
+                    https://cdn.firebase.com/libs/geofire/4.1.0/geofire.min.js
+                    https://unpkg.com/
+                    https://cdnjs.cloudflare.com/
+                    https://crimewatch-8f003.firebaseio.com
+                    https://*.fontawesome.com/
+                    https://*.firebaseio.com/
+                    https://maps.googleapis.com/
+                    https://*.googleapis.com/
+                    https://*.gstatic.com/
+                    https://firebasestorage.googleapis.com/v0/b/crimewatch-8f003.appspot.com/*
+                'unsafe-eval'
+								'unsafe-inline'
+        ;">        <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
+        <!--<title>Hello World</title>-->
     </head>
     <body>
         <div class="app">
-            <h1>Apache Cordova</h1>
+            <h1></h1>
             <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+                <p class="event listening"></p>
+                <p class="event received"></p>
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+
     </body>
 </html>

@@ -1,10 +1,5 @@
-import main from '.'
-import QRgen from '.'
-import QRread from '.'
-import sign_log from '.'
 
-
-
+var flag = true;
 
 var app = {
     // Application Constructor
@@ -30,6 +25,12 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+
+        if(flag){
+            // navigator.app.loadUrl("file:///android_asset/www/sign_log.html");
+            window.location = "/sign_log.html";
+        }
+
     }
 };
 
