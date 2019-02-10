@@ -1,4 +1,6 @@
 // assure created password matches
+import * as firebase from '/firebase';
+
 var password = document.getElementById("password"), rep_password = document.getElementById("rep-password");
 
 function validatePassword(){

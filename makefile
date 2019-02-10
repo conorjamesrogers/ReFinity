@@ -1,5 +1,6 @@
 .PHONY: browser
 
 browser:
-	cordova plantform add browser
-	condova build browser
+	cordova platform rm browser
+	cordova platform add browser
+	cordova build browser
