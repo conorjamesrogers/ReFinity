@@ -31,7 +31,7 @@ function login() {
       // TODO: Logged In.
       () => {
         // alert("Sucess.");
-        window.location = "/main_interface.html.html";
+        window.location = "/index.html";
       }
     ).catch(function(error) {
       var errorCode = error.code;
@@ -97,7 +97,7 @@ $(document).ready(function() {
           var addUser = firebase.functions().httpsCallable('addUser');
           addUser({name:name}).then(function(){ 
             console.log("Written record");
-            window.location = "/main_interface.html.html";
+            window.location = "/index.html";
           }).catch(function(error) {
             var code = error.code;
             var message = error.message;
