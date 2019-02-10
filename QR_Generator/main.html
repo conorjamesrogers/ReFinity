@@ -1,0 +1,50 @@
+
+TODO random number generator
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Codes</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        img{
+            width: 50%;
+        }
+        div img{
+            width: 50%;
+        }
+    </style>
+    <script src="qrcode.js"></script>
+</head>
+<body>
+    <header>
+        <h1>QR Codes</h1>
+    </header>
+    <main>
+       <!-- using
+       https://davidshimjs.github.io/qrcodejs/
+       -->
+        <div id="output"></div>
+        <img src="qrcode-encoding.png" />
+    </main>    
+    <script>
+	      var hell = Math.random();
+        let qrcode = new QRCode("output", {
+            text: "google.com",
+            width: 80,
+            height: 80,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+        
+        document.body.addEventListener('click', ()=>{
+            qrcode.clear(); 
+            qrcode.makeCode("http://google.ca/"); 
+        })
+        
+    </script>
+</body>
+</html>
