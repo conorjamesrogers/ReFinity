@@ -10,6 +10,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
+var functions = firebase.functions();
 var password = document.getElementById("password"), rep_password = document.getElementById("rep-password");
 
 function validatePassword(){
@@ -27,10 +28,10 @@ function login() {
   firebase.auth().signInWithEmailAndPassword(
     $('#email-log').val(),
     $('#password-log').val()).then(
+      // TODO: Logged In.
       () => {
-
-        alert("Sucess.");
-
+        // alert("Sucess.");
+        window.location = "/main_interface.html.html";
       }
     ).catch(function(error) {
       var errorCode = error.code;
@@ -76,7 +77,7 @@ $(document).ready(function() {
     $('.create').addClass('hide');
   });
 
-  $('#login-btn').click(login);
+  $('.login-btn').click(login);
 
   $('.create-btn').click(function () {
 
@@ -89,18 +90,20 @@ $(document).ready(function() {
     }
     firebase.auth().createUserWithEmailAndPassword(
       email, password).then(function () {
+        console.log("Initial");
         var user = firebase.auth().currentUser;
-
-        user.updateProfile({
-          accountName: name,
-        }).then(function() {
-          var newUser = firebase.auth().currentUser;
-          alert(`Add a new user called ${newUser.accountName}.`);
-        }).catch(function(error) {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          alert(errorMessage);
-          console.log(error);
+        user.getIdToken(true).then(function(idToken) {
+          console.log(`Token=${idToken}`);
+          var addUser = firebase.functions().httpsCallable('addUser');
+          addUser({name:name}).then(function(){ 
+            console.log("Written record");
+            window.location = "/main_interface.html.html";
+          }).catch(function(error) {
+            var code = error.code;
+            var message = error.message;
+            var details = error.details;
+            console.log(message);
+          });
         });
       }).catch(function(error) {
         var errorCode = error.code;
@@ -118,7 +121,5 @@ $(document).ready(function() {
 
         console.log(error);
       });
-
-
   });
 });
